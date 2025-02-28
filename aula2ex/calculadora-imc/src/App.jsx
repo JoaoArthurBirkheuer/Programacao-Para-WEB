@@ -31,7 +31,7 @@ function App() {
     },
     h1: {
       textAlign: 'center',
-      marginBottom: '20px',
+      marginBottom: '70px',
     },
     h3: {
       textAlign: 'center',

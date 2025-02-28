@@ -7,25 +7,25 @@ function Calculadora() {
 
   const calcularIMC = () => {
     if (altura > 0) {
-      const imcCalculado = peso / (altura * altura); // Fórmula correta
+      const imcCalculado = peso / (altura * altura);
       setIMC(imcCalculado);
     }
   };
 
   const styles = {
     container: {
-      marginTop: '20px', // Margem superior para a div principal
+      marginTop: '70px',
       textAlign: 'center',
     },
     inputsContainer: {
-      display: 'flex', // Flexbox para alinhar os inputs lado a lado
+      display: 'flex',
       justifyContent: 'center',
-      gap: '20px', // Espaçamento entre os inputs
+      gap: '20px', 
       marginBottom: '20px',
     },
     input: {
       padding: '8px',
-      width: '150px', // Largura fixa para os inputs
+      width: '150px', 
       fontSize: '16px',
       borderRadius: '4px',
       border: '1px solid #ccc',
@@ -44,7 +44,7 @@ function Calculadora() {
       color: imc >= 25.0 ? "red" : "black",
       fontSize: '24px',
       fontWeight: 'bold',
-      marginTop: '20px',
+      marginTop: '20px', 
     },
   };
 
