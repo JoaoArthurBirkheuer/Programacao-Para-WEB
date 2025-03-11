@@ -1,13 +1,36 @@
+import React from 'react';
+
 export default function Button({ children, onClick, type = "button", ...props }) {
-    return (
-      <button
-        type={type}
-        onClick={onClick}
-        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-        {...props}
-      >
-        {children}
-      </button>
-    );
-  }
-  
+  const buttonStyle = {
+    backgroundColor: '#3b82f6', // Azul do Tailwind
+    color: 'white',
+    padding: '0.5rem 1rem',
+    borderRadius: '0.5rem',
+    transition: 'background-color 0.3s',
+  };
+
+  const buttonHoverStyle = {
+    backgroundColor: '#2563eb', // Azul escuro do Tailwind
+  };
+
+  const handleMouseEnter = (e) => {
+    e.target.style.backgroundColor = buttonHoverStyle.backgroundColor;
+  };
+
+  const handleMouseLeave = (e) => {
+    e.target.style.backgroundColor = buttonStyle.backgroundColor;
+  };
+
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      {...props}
+      style={buttonStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {children}
+    </button>
+  );
+}
