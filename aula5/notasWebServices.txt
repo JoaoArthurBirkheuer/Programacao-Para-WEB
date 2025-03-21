@@ -1,0 +1,17 @@
+ESCREVA localhost:3000 PARA ACESSAR (depois de npm start)
+
+DIFERENCIAÇÃO DE MÉTODOS DE COMUNICAÇÃO DO HTTP
+http://localhost/resource/resource/parameter
+MAIOR PARTE DOS INPUTS E OUTPUT VAI SER EM json
+
+200 --> OK
+201 --> Created
+202 --> Accepted
+204 --> No Content
+304 --> Not Modified
+400 --> Bad Request
+403 --> Forbidden
+404 --> Not Found
+405 --> Method Not Allowed
+415 --> Unsupported Media Type
+500 --> Internal Server Error
