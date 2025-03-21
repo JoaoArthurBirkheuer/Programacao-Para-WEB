@@ -49,7 +49,7 @@ const apagarLivro = (request, response) => {
         return response.status(400).json({msg : "Livro não encontrado"})
     }
     else{
-        listaLivros.splice(index, index)
+        listaLivros.splice(index, 1)
         return response.status(200).json({msg : "Livro removido com sucesso"})
     }
 }
@@ -63,11 +63,18 @@ const sobre = (request,response) => {
 }
 
 const pegarDados = (request, response) => {
-    // extração de forma desestruturada
-    // No Postman, no Body, escolher a opção raw e JSON
-    // Atributos no Body devem ser iguais aos que estão sendo desestruturados, o nome no caso
-    const {nome, profissao} = request.body
-    response.status(200).json({"nomebody": nome, "profissaobody" : profissao, "msg" : "Dados processados"})
+    // Destructuring the name and profession from the request body
+    const { nome, profissao } = request.body;
+    
+    // Combining name and profession in the format "Name, Profession"
+    const nomeProfissao = `${nome}, ${profissao}`;
+    
+    // Responding with the formatted result
+    response.status(200).json({
+        "nomebody": nome,
+        "profissaobody": profissao,
+        "msg": nomeProfissao
+    });
 }
 
 // Não tem hot reload
